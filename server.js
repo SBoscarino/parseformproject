@@ -10,8 +10,10 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.post('/signUp', function(req, res){
-  res.render();
+
+app.post('/parseForm', function(req, res){
+  console.log("Info on the way from form!")
+  res.render('signUp', req.body);
 })
 
 app.listen(4500, function(){
